@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title itemprop="name">Preview bootstrap html snippet. timeline with year and date</title>
+    <meta name="description" itemprop="description"
+          content="Preview bootstrap html snippet. timeline with year and date. Copy and paste the html, css and js code for save time, build your app faster and responsive">
+    <meta name="keywords"
+          content="html, css, javascript, themes, templates, code snippets, ui examples, react js, react-native, plagraounds, cards, front-end, profile, invoice, back-end, web-designers, web-developers">
+    <link itemprop="sameAs" href="https://www.facebook.com/bootdey">
+    <link itemprop="sameAs" href="https://twitter.com/bootdey">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/bootdey_favicon.ico">
+    <link rel="apple-touch-icon" sizes="135x140" href="/img/bootdey_135x140.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/bootdey_76x76.png">
+    <link rel="canonical" href="https://bootdey.com/snippets/view/timeline-with-year-and-date" itemprop="url">
+    <meta property="twitter:account_id" content="2433978487"/>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@bootdey">
+    <meta name="twitter:creator" content="@bootdey">
+    <meta name="twitter:title" content="Preview bootstrap html snippet. timeline with year and date">
+    <meta name="twitter:description"
+          content="Preview bootstrap html snippet. timeline with year and date. Copy and paste the html, css and js code for save time, build your app faster and responsive">
+    <meta name="twitter:image" content="https://bootdey.com/files/SnippetsImages/bootstrap-snippets-1433.png">
+    <meta name="twitter:url" content="https://bootdey.com/snippets/preview/timeline-with-year-and-date">
+    <meta property="og:title" content="Preview bootstrap html snippet. timeline with year and date">
+    <meta property="og:url" content="https://bootdey.com/snippets/preview/timeline-with-year-and-date">
+    <meta property="og:image" content="https://bootdey.com/files/SnippetsImages/bootstrap-snippets-1433.png">
+    <meta property="og:description"
+          content="Preview bootstrap html snippet. timeline with year and date. Copy and paste the html, css and js code for save time, build your app faster and responsive">
+    <meta name="msvalidate.01" content="23285BE3183727A550D31CAE95A790AB"/>
+    <script src="/cache-js/cache-1635427806-97135bbb13d92c11d6b2a92f6a36685a.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="snippetContent">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row justify-content-center mt-4 pt-3">
+                            <div class="col-xl-10">
+                                <ul class="timeline mb-0">
+                                    {% for i in times %}
+
+                                        <li>
+                                            <div class="date bg-light"><h5
+                                                    class="text-uppercase mb-0 fs-16">{{ i.year }}</h5>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="event-content">
+                                                        <div class="timeline-date bg-primary text-center rounded float-end">
+                                                            <h3 class="text-white mb-0 fs-17">{{ i.month }}</h3>
+                                                            <p class="mb-0 text-white-50">{{ i.month }}</p></div>
+                                                        <div class="timeline-text"><h3 class="fs-17">{{ i.title }}</h3>
+                                                            <p class="mb-0 mt-2 pt-1 text-muted">{{ i.body }}</p></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style type="text/css">body {
+        margin-top: 20px;
+        background: #eee;
+    }
+
+    .timeline {
+        display: grid;
+        grid-template-columns: .25rem 1fr;
+        grid-auto-columns: -webkit-max-content;
+        grid-auto-columns: max-content;
+        -webkit-column-gap: 2rem;
+        -moz-column-gap: 2rem;
+        column-gap: 2rem;
+        list-style: none
+    }
+
+    .timeline::before {
+        content: "";
+        grid-column: 1;
+        grid-row: 1/span 20;
+        
+        background: #f8f7fa
+    }
+
+    .timeline li {
+        grid-column: 2;
+        margin-inline: 1.5rem;
+        grid-row: span 2;
+        display: grid;
+        grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content;
+        grid-template-rows: min-content min-content min-content
+    }
+
+    .timeline li:not(:last-child) {
+        margin-bottom: 2rem
+    }
+
+    .timeline li .date {
+        height: 3rem;
+        margin-inline: -1.5rem;
+        text-align: center;
+        color: #fff;
+        display: grid;
+        place-content: center;
+        position: relative;
+        border-radius: 1.5rem 0 0 1.5rem
+    }
+
+    .timeline li .date::before {
+        content: "";
+        width: 1.8rem;
+        aspect-ratio: 1;
+        background: #f8f7fa;
+        position: absolute;
+        top: 100%;
+        -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+        right: 0
+    }
+
+    .timeline li .date::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: #663b6c;
+        border-radius: 15px;
+        z-index: 1;
+        top: 50%;
+        -webkit-transform: translate(50%, -50%);
+        transform: translate(50%, -50%);
+        right: calc(100% + 2rem + .125rem)
+    }
+
+    .timeline li .title {
+        position: relative;
+        padding-inline: 1.5rem;
+        overflow: hidden;
+        -webkit-padding-before: 1.5rem;
+        padding-block-start: 1.5rem;
+        -webkit-padding-after: 1rem;
+        padding-block-end: 1rem;
+        font-weight: 500
+    }
+
+    .timeline li .title::before {
+        bottom: calc(100% + .125rem)
+    }
+
+    .timeline li .descr {
+        position: relative;
+        padding-inline: 1.5rem;
+        -webkit-padding-after: 1.5rem;
+        padding-block-end: 1.5rem;
+        font-weight: 300
+    }
+
+    .timeline li .descr::before {
+        z-index: -1;
+        bottom: .25rem
+    }
+
+    @media (min-width: 40rem) {
+        .timeline {
+            grid-template-columns:1fr .25rem 1fr
+        }
+
+        .timeline::before {
+            grid-column: 2
+        }
+
+        .timeline li:nth-child(odd) {
+            grid-column: 1
+        }
+
+        .timeline li:nth-child(odd) .date {
+            border-radius: 0 1.5rem 1.5rem 0
+        }
+
+        .timeline li:nth-child(odd) .date::before {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            left: 0
+        }
+
+        .timeline li:nth-child(odd) .date::after {
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            left: calc(100% + 2rem + .125rem)
+        }
+
+        .timeline li:nth-child(even) {
+            grid-column: 3
+        }
+
+        .timeline li:nth-child(2) {
+            grid-row: 2/4
+        }
+    }
+
+    .timeline .timeline-date {
+        width: 54px;
+        height: 85px;
+        display: inline-block;
+        padding: 8px;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+        z-index: 1
+    }
+
+    h5, h6 {
+        color: #201f26 !important;
+    }</style>
+    <script type="text/javascript"></script>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1RTS0P1CD"></script>
+<script>window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'G-F1RTS0P1CD');</script>
+</body>
+</html>
