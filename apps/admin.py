@@ -1,14 +1,11 @@
 from django.contrib import admin
+from apps.exec import export_to_xlsx
+from apps.models import Contact
 
-# from apps.models import Friend
-from apps.models import TimeLine
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ['name', 'last_name', 'email', 'phone', 'address', 'group']
+    actions = [export_to_xlsx]
 
 
-#
-# @admin.register(Friend)
-# class FriendAdmin(admin.ModelAdmin):
-#     pass
-
-@admin.register(TimeLine)
-class TimeLineAdmin(admin.ModelAdmin):
-    pass
+admin.site.register(Contact, ContactAdmin)

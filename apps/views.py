@@ -1,18 +1,9 @@
 from django.shortcuts import render
-
-# from apps.models import Friend
-from apps.models import TimeLine
-
-
-# def index_view(request):
-#     context = {
-#         'friends': Friend.objects.all()
-#     }
-#     return render(request, 'apps/index.html', context)
+from apps.models import Contact
 
 
 def index_view(request):
     context = {
-        'times': TimeLine.objects.all()
+        'contacts': Contact.objects.all()
     }
-    return render(request, 'apps/index1.html', context)
+    return render(request, 'apps/index.html', context)

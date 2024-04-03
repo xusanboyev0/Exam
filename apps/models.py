@@ -1,17 +1,14 @@
 from django.db import models
-from django.db.models import CASCADE
-from django_ckeditor_5.fields import CKEditor5Field
 
 
-# class Friend(models.Model):
-#     first_name = models.CharField(max_length=50)
-#     last_name = models.CharField(max_length=50)
-#     photo = models.ImageField(upload_to='friends/%Y/%m/%d/')
-#     proffesion = CKEditor5Field()
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    phone = models.CharField(max_length=15)
+    address = models.CharField()
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
+    group = models.CharField(max_length=50)
 
-
-class TimeLine(models.Model):
-    year = models.IntegerField()
-    title = models.CharField(max_length=255)
-    body = CKEditor5Field()
-    month = models.DateField()
+    def __str__(self):
+        return self.name
